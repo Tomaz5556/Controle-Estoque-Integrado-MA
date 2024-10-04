@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 const app = express();
 const port = 3000;
 
-const uri = "mongodb+srv://tmb5:MexTRyFdDDamqlVZ@clusterteste.lc1jt.mongodb.net/?retryWrites=true&w=majority&appName=ClusterTeste";
+const uri = "mongodb+srv://tmb5:ndudXglfw9gkGb27@clusterteste.lc1jt.mongodb.net/?retryWrites=true&w=majority&appName=ClusterTeste";
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,7 +13,7 @@ app.post('/login', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(uri);
     
     try {
         await client.connect();
